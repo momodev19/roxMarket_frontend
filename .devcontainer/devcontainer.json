@@ -1,0 +1,25 @@
+{
+    "name": "Frontend Dev Container",
+    "workspaceFolder": "/srv/frontend",
+    "dockerComposeFile": "../../docker/docker-compose.yml",
+    "service": "frontend",
+    "remoteUser": "root",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bradlc.vscode-tailwindcss",
+                "christian-kohler.npm-intellisense",
+                "codeium.codeium",
+                "dbaeumer.vscode-eslint",
+                "donjayamanne.githistory",
+                "eamodio.gitlens",
+                "editorconfig.editorconfig",
+                "esbenp.prettier-vscode",
+                "ms-azuretools.vscode-containers",
+                "orta.vscode-jest",
+                "postman.postman-for-vscode",
+                "redhat.vscode-yaml"
+            ]
+        }
+    }
+}
