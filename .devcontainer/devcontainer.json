@@ -18,7 +18,8 @@
                 "ms-azuretools.vscode-containers",
                 "orta.vscode-jest",
                 "postman.postman-for-vscode",
-                "redhat.vscode-yaml"
+                "redhat.vscode-yaml",
+                "ultrabytesoftwares.markdown-tree"
             ]
         }
     }
