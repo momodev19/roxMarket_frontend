@@ -2,6 +2,7 @@
 // All packages except `@mantine/hooks` require styles imports
 import "@mantine/core/styles.css";
 import AppShellClient from "./AppShellClient";
+import { getItemTypes } from "@/lib/api/itemTypes";
 
 import {
   ColorSchemeScript,
@@ -14,11 +15,12 @@ export const metadata = {
   description: "A simple project to track prices",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const itemTypes = await getItemTypes();
   return (
     <html lang="en" {...mantineHtmlProps}>
       <head>
@@ -26,7 +28,7 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider defaultColorScheme="dark">
-          <AppShellClient>{children}</AppShellClient>
+          <AppShellClient itemTypes={itemTypes}>{children}</AppShellClient>
         </MantineProvider>
       </body>
     </html>

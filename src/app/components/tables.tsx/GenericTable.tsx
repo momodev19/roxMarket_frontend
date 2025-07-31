@@ -30,7 +30,11 @@ export default function GenericTable({
   data,
   columns,
   renderRows,
-  tableOptions,
+  tableOptions = {
+    highlightOnHover: true,
+    striped: true,
+    withTableBorder: true,
+  },
 }: GenericTableProps) {
   // Get columns from data if not provided
   const resolvedColumns = useMemo(() => {

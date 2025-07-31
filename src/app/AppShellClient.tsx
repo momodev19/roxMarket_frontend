@@ -5,8 +5,15 @@ import { AppShell } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Header from "./components/defaults/Header";
 import Navbar from "./components/defaults/Navbar";
+import { ItemType } from "@/types/ItemTypes";
 
-export default function AppShellClient({ children }: { children: ReactNode }) {
+export default function AppShellClient({
+  children,
+  itemTypes,
+}: {
+  children: ReactNode;
+  itemTypes: ItemType[];
+}) {
   const [opened, { toggle }] = useDisclosure();
 
   return (
@@ -19,7 +26,7 @@ export default function AppShellClient({ children }: { children: ReactNode }) {
         <Header opened={opened} toggle={toggle} />
       </AppShell.Header>
       <AppShell.Navbar p="md">
-        <Navbar />
+        <Navbar itemTypes={itemTypes} />
       </AppShell.Navbar>
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>

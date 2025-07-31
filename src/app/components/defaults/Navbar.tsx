@@ -1,11 +1,22 @@
-import { Text } from "@mantine/core";
+import { NavLink } from "@mantine/core";
+import Link from "next/link";
+import { ItemType } from "@/types/ItemTypes";
 
-export default function Navbar() {
+export default function Navbar({ itemTypes }: { itemTypes: ItemType[] }) {
   return (
-    <Text>
-      Navbar is collapsed on mobile at sm breakpoint. At that point it is no
-      longer offset by padding in the main element and it takes the full width
-      of the screen when opened.
-    </Text>
+    <>
+      <NavLink component={Link} href="/" label="Dashboard" />
+      <NavLink href="#" label="Items" childrenOffset={28} defaultOpened>
+        {itemTypes.map((itemType) => (
+          <NavLink
+            key={itemType.id}
+            component={Link}
+            href={`/items/prices?typeId=${itemType.id}`}
+            label={itemType.name}
+          />
+        ))}
+      </NavLink>
+      <NavLink href="#" label="Progression" />
+    </>
   );
 }

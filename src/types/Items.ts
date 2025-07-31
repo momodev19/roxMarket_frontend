@@ -1,7 +1,10 @@
-export type Item = {
+export type ItemTypeId = {
+  typeId: number;
+};
+
+export type Item = ItemTypeId & {
   id: number;
   name: string;
-  typeId: number;
 };
 
 export type ItemWithPrice = Item & {
