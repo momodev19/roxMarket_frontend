@@ -7,8 +7,7 @@ export default async function ItemsPage({
 }: {
   searchParams: ItemTypeId;
 }) {
-  const { typeId } = await searchParams;
-  const items = await getItemsWithPrice(typeId);
+  const items = await getItemsWithPrice(searchParams.typeId);
 
   return <GenericTable data={items} />;
 }
