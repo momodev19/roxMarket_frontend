@@ -11,7 +11,7 @@ export default function Navbar({ itemTypes }: { itemTypes: ItemType[] }) {
           <NavLink
             key={itemType.id}
             component={Link}
-            href={`/items/prices?typeId=${itemType.id}`}
+            href={`/items/${itemType.name.toLocaleLowerCase()}`}
             label={itemType.name}
           />
         ))}
