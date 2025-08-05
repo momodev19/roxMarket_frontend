@@ -1,7 +1,7 @@
 import { NavLink } from "@mantine/core";
 import Link from "next/link";
 import { ItemType } from "@/types/ItemTypes";
-import { slugify } from "@/lib/api/utils/slug";
+import { slugify } from "@/lib/utils/slug";
 
 interface NavbarProps {
   itemTypes: ItemType[];
