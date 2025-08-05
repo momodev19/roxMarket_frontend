@@ -1,8 +1,13 @@
 import { NavLink } from "@mantine/core";
 import Link from "next/link";
 import { ItemType } from "@/types/ItemTypes";
+import { slugify } from "@/lib/api/utils/slug";
 
-export default function Navbar({ itemTypes }: { itemTypes: ItemType[] }) {
+interface NavbarProps {
+  itemTypes: ItemType[];
+}
+
+export default function Navbar({ itemTypes }: NavbarProps) {
   return (
     <>
       <NavLink component={Link} href="/" label="Dashboard" />
@@ -11,7 +16,7 @@ export default function Navbar({ itemTypes }: { itemTypes: ItemType[] }) {
           <NavLink
             key={itemType.id}
             component={Link}
-            href={`/items/${itemType.name.toLocaleLowerCase()}`}
+            href={`/items/${slugify(itemType.name.toLowerCase())}`}
             label={itemType.name}
           />
         ))}
