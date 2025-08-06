@@ -1,4 +1,4 @@
-import GenericTable from "@/app/components/tables.tsx/GenericTable";
+import GenericTable from "@/app/components/tables/GenericTable";
 import { getItemsWithPrice } from "@/lib/api/items";
 import { ItemTypeName } from "@/types/ItemTypes";
 import { ITEM_TYPE_NAMES } from "@/constants/itemTypes";

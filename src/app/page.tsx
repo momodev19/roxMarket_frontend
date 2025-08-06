@@ -1,5 +1,5 @@
 import { getItemsWithPrice } from "@/lib/api/items";
-import GenericTable from "@/app/components/tables.tsx/GenericTable";
+import GenericTable from "@/app/components/tables/GenericTable";
 
 export default async function Home() {
   const items = await getItemsWithPrice();
